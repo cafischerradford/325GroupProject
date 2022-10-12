@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TabController;
+use App\Http\Controllers\SignupController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,7 @@ use App\Http\Controllers\TabController;
 |
 */
 
-Route::get('/', [TabConroller::class, 'index']);
+Route::get('/', [TabController::class, 'index']);
 Route::get('/fruits_vegetables', [TabController::class, 'fruits_vegetables']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/signup', [SignupController::class, 'index']);
