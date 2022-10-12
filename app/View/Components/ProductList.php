@@ -12,14 +12,14 @@ class ProductList extends Component
      * 
      * @var array
      */
-    public array $products;
+    public $products;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(array $products)
+    public function __construct($products)
     {
         $this->products = $products;
     }

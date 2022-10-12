@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Product;
+use App\Http\Controllers\TabController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +14,5 @@ use App\Models\Product;
 |
 */
 
-Route::get('/', function() {
-    return redirect('/fruits_vegetables');
-});
-
-Route::get('/fruits_vegetables', function() {
-    $products = Product::all();
-    return view('fruits_vegs', ['products' => $products]);
-});
+Route::get('/', [TabConroller::class, 'index']);
+Route::get('/fruits_vegetables', [TabController::class, 'fruits_vegetables']);

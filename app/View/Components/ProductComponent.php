@@ -11,14 +11,14 @@ class ProductComponent extends Component
     /**
      * @var Product
      */
-    public Product $product;
+    public $product;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Product $product)
+    public function __construct($product)
     {
         $this->product = $product;
     }
