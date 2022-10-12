@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return redirect('/fruits_vegetables');
+});
+
+Route::get('/fruits_vegetables', function() {
+    $products = Product::all();
+    return view('fruits_vegs', ['products' => $products]);
 });

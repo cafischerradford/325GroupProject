@@ -6,7 +6,12 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        baskerville: ['Libre Baskerville', 'serif'],
+        quicksand: ['Quicksand', 'san-serif']
+      },
+    },
   },
   plugins: [],
 }
