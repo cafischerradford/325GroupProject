@@ -12,7 +12,11 @@ class TabController extends Controller
     }
 
     public function fruits_vegetables() {
-        $products = Product::all();
+        $products = Product::join('product_categories', 'products.id', '=', 'product_categories.product_id')
+        ->join('categories', 'product_categories.category_id', '=', 'categories.id')
+        ->where('categories.name', '=', 'Fruits & Vegetables')
+        ->get();
+
         return view('fruits_vegs', ['products' => $products]);
     }
 
@@ -29,6 +33,6 @@ class TabController extends Controller
     }
 
     public function drinks() {
-        
+
     }
 }
