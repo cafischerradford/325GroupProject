@@ -19,5 +19,9 @@ use App\Http\Controllers\CartController;
 
 Route::get('/', [TabController::class, 'index']);
 Route::get('/fruits_vegetables', [TabController::class, 'fruits_vegetables']);
+Route::get('/meats', [TabController::class, 'meats']);
+Route::get('/dairy', [TabController::class, 'dairy']);
+Route::get('/snacks', [TabController::class, 'snacks']);
+Route::get('/drinks', [TabController::class, 'drinks']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/signup', [SignupController::class, 'index']);
