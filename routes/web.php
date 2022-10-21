@@ -24,4 +24,7 @@ Route::get('/dairy', [TabController::class, 'dairy']);
 Route::get('/snacks', [TabController::class, 'snacks']);
 Route::get('/drinks', [TabController::class, 'drinks']);
 Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/signup', [SignupController::class, 'index']);
+Route::post('/signup', [SignupController::class, 'create']);
+Route::get('/cart', [CartController::class, 'index'])->middleware('auth');
