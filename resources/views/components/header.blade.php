@@ -33,6 +33,11 @@
                 </div>
             </li>
         </ul>
-        <a href="/login">Login</a>
+        @auth
+            <a href="/cart">Cart</a>
+        @endauth
+        @guest
+            <a href="/login">Login</a>
+        @endguest
     </div>
   </nav>

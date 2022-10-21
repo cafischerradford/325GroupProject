@@ -6,8 +6,9 @@
         <a class="font-baskerville text-5xl" href="/">Grocer</a>
     </nav>
     <div class='h-[90vh] font-quicksand flex flex-col justify-center items-center'>
-        <form class="w-1/3 basis-1/2 justify-between flex flex-col" action="/api/auth/login" method="POST">
-        <h1 class='font-baskerville text-4xl text-center'>Login to your account</h1>
+        <form class="w-1/3 basis-1/2 justify-between flex flex-col" action="/login" method="POST">
+            @csrf
+            <h1 class='font-baskerville text-4xl text-center'>Login to your account</h1>
             <div class='flex flex-col'>
             <label>Email</label>
             <input class="rounded-sm h-8 border border-gray-200 indent-1" type="email" name="email" placeholder='johndoe@email.com'/>
