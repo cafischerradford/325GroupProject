@@ -4,7 +4,7 @@
     <div class='px-3 py-2 flex flex-col basis-5/12 justify-between'>
         {{-- PRODUCT INFO --}}
         <div class='flex justify-between'>
-            <p>{{$product->name}}</p>
+            <p>{{$product->product_name}}</p>
             <p>${{$product->price / 100}}</p>
         </div>
         <p>{{$product->unit_label}}</p>
