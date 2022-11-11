@@ -3,16 +3,15 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use App\Models\Product;
 
-class ProductComponent extends Component
+class CartItem extends Component
 {
 
     /**
-     * @var Product
+     * @var CartItem
      */
-    public $product;
-
+    public $cartitem;
+    
     /**
      * @var int
      */
@@ -23,9 +22,9 @@ class ProductComponent extends Component
      *
      * @return void
      */
-    public function __construct($product, $key)
+    public function __construct($cartitem, $key)
     {
-        $this->product = $product;
+        $this->cartitem = $cartitem;
         $this->key = $key;
     }
 
@@ -36,6 +35,6 @@ class ProductComponent extends Component
      */
     public function render()
     {
-        return view('components.product-component');
+        return view('components.cart-item');
     }
 }

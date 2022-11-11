@@ -3,30 +3,35 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use App\Models\Product;
 
-class ProductComponent extends Component
+class PriceInfo extends Component
 {
-
-    /**
-     * @var Product
-     */
-    public $product;
 
     /**
      * @var int
      */
-    public $key;
+    public $subtotal;
+
+    /**
+     * @var int
+     */
+    public $total;
+
+    /**
+     * @var array
+     */
+    public $cartitems;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($product, $key)
+    public function __construct($subtotal, $total, $cartitems)
     {
-        $this->product = $product;
-        $this->key = $key;
+        $this->subtotal = $subtotal;
+        $this->total = $total;
+        $this->cartitems = $cartitems;
     }
 
     /**
@@ -36,6 +41,6 @@ class ProductComponent extends Component
      */
     public function render()
     {
-        return view('components.product-component');
+        return view('components.price-info');
     }
 }

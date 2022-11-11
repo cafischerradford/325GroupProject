@@ -15,13 +15,21 @@ class Header extends Component
     public $active;
 
     /**
+     * The number of items in the cart
+     * 
+     * @var int
+     */
+    public $count;
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($active)
+    public function __construct($active, $count)
     {
         $this->active = $active;
+        $this->count = $count;
     }
 
     /**
