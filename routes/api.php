@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\CartItem;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/update_item', function(Request $request) {
+    $cart_item_id = $request->cart_item_id;
+    $quantity = $request->quantity;
+
+    $cart_item = CartItem::where('id', '=', $cart_item_id)->update(['quantity' => $quantity]);
+    return;
 });
