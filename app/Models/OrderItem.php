@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * 
  */
-class CartItem extends Model
+class OrderItem extends Model
 {
     use HasFactory;
-
     public $fillable = [
-        'user_id',
+        'order_id',
         'product_id',
-        'quantity'
+        'quantity',
+        'price'
     ];
     public $timestamps = false;
 

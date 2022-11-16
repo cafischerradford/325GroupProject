@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         }
 
         $checkout_session = $stripe->checkout->sessions->create([
-            'success_url' => 'https://google.com',
+            'success_url' => 'http://localhost:8000/',
             'cancel_url' => 'http://localhost:8000/cart',
             'customer' => $request->customer_id,
             'line_items' => $line_items,
