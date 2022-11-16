@@ -3,7 +3,7 @@
 <x-head title="Grocer | Dairy"/>
 <body class="bg-gray-200">
     <x-header active="dairy" :count="$count"/>
-    <x-banner title="Dairy" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, maxime tempore quibusdam quae dignissimos harum deserunt quod nesciunt quos fuga maiores ea repudiandae voluptatibus deleniti voluptate consectetur. Deserunt, nulla sed." />
+    <x-banner title="Dairy" description="Our dairy products come from the best dairy farms in America. These farms have only pasture raised A2A2 cows with no rBST, so you can ensure you and your family recieve the best dairy products available when purchasing from us." />
     <x-product-list :products="$products"/>
 </body>
 </html>
