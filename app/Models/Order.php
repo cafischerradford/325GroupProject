@@ -8,21 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * 
  */
-class CartItem extends Model
+class Order extends Model
 {
     use HasFactory;
-
     public $fillable = [
-        'user_id',
-        'product_id',
-        'quantity'
+        'user_id'
     ];
-    public $timestamps = false;
 
     /**
      * 
      */
-    public function product() {
-        return $this->hasOne(Product::class, 'id', 'product_id');
+    public function order_items() {
+        return $this->hasMany(OrderItem::class, 'id', 'order_id');
     }
 }
