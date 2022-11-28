@@ -12,13 +12,21 @@ class Order extends Model
 {
     use HasFactory;
     public $fillable = [
-        'user_id'
+        'user_id',
+        'total'
     ];
 
     /**
      * 
      */
     public function order_items() {
-        return $this->hasMany(OrderItem::class, 'id', 'order_id');
+        return $this->hasMany(OrderItem::class, 'order_id', 'id');
+    }
+
+    /**
+     * 
+     */
+    public function user() {
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }
