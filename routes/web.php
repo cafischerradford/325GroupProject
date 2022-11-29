@@ -6,7 +6,8 @@ use App\Http\Controllers\SignupController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\LogoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,9 @@ Route::get('/drinks', [TabController::class, 'drinks']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/cart', [CartController::class, 'index'])->middleware('auth');
 Route::get('/signup', [SignupController::class, 'index']);
+Route::get('/order_history', [OrderController::class, 'index'])->middleware('auth');
+Route::get('/order/{id}', [OrderController::class, 'order'])->middleware('auth');
+Route::post('/logout', [LogoutController::class, 'logout']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/signup', [SignupController::class, 'create']);
 Route::post('/delete_item', [CartController::class, 'delete'])->middleware('auth');
